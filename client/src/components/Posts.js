@@ -5,9 +5,6 @@ import {getPosts} from '../reducers/posts'
 import {Container, Grid, Header, Card, Image} from 'semantic-ui-react'
 
 class Posts extends React.Component {
-	componentDidMount() {
-		this.props.dispatch(getPosts())
-	}
 
 	posts = () => {
 		return this.props.posts.map(post => {
