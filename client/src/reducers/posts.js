@@ -5,10 +5,13 @@ const ADD_POST = 'ADD_POST'
 const UPDATE_POST = 'UPDATE_POST'
 const DELETE_POST = 'DELETE_POST'
 
-export const getPosts = () => {
+export const getPosts = (cb) => {
 	return (dispatch) => {
 		axios.get('/api/posts')
-			.then(res => dispatch({type: POSTS, posts: res.data}))
+			.then(res => {
+				dispatch({type: POSTS, posts: res.data})
+				cb()
+			})
 	}
 }
 
