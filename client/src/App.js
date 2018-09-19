@@ -1,7 +1,17 @@
 import React from 'react'
+import {Switch, Route} from 'react-router-dom'
+import Home from './components/Home'
+import Posts from './components/Posts'
+import PostView from './components/PostView'
+import NoMatch from './components/NoMatch'
 
 const App = () => (
-  <h1>App</h1>
+  <Switch>
+    <Route exact path="/" component={home} />
+    <Route exact path="/posts" component={Posts} />
+    <Route exact path="posts/:id" component={PostView} />
+    <Route component={NoMatch} />
+  </Switch>
 )
 
 export default App
