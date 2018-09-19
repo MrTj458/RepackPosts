@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {Divider, Header, Image, Container, Table} from 'semantic-ui-react'
+import {Header, Container} from 'semantic-ui-react'
 
 const PostView = ({post = {}}) => (
 	<Container>
@@ -16,4 +16,4 @@ const mapStateToProps = (state, props) => {
 	return {post: state.posts.find(p => p.id === parseInt(props.match.params.id))}
 }
 
-export default PostView
+export default connect(mapStateToProps)(PostView)
