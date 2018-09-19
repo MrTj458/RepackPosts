@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
-  # git alias test
+  # git alias test again
 
   def index
     render json: Post.order(created_at: :desc)
